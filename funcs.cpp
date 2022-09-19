@@ -132,40 +132,73 @@ std::string trapezoid(int width, int height)
 std::string checkerboard3x3(int width, int height)
 {
 	std::cout << "Shape: \n";
-	int num = 0;
-	
+	int star_middle = 1;
+	int blank_middle = 4;
+	int row_star = 1;
+	int row_blank = 4;
+
 	for (int row = 0; row < height; row++) {
-		for (int s = 0; s < 3; s++) {
-			for (int col = 0; col < width; col++) {
-				for(int i = 0; i < 3; i++) {
+		if ( (row%2 == 0 && row%3 == 0 && row%6 == 0) || (row == row_star) || (row%2 == 0 && row != row_blank) ){
+			star_middle = 1;
+			blank_middle = 4;
+			for (int col = 0; col < width; col++) { //row type 1
+				if (col%2 == 0 && col%3 == 0 && col%6 == 0) {
 					std::cout << "*";
-					col++;
 				}
-				//if break statement here?
-
-				for(int j = 0; j < 3; j++) {
+				else if (col%3 == 0 && col != 0) {
 					std::cout << " ";
-					col++;
+				}
+				else if (col == star_middle) {
+					std::cout << "*";
+					star_middle += 6;
+				}
+				else if (col == blank_middle) {
+					std::cout << " ";
+					blank_middle += 6;
+				}
+				else if (col%2 == 0) {
+					std::cout << "*";
+				}
+				else {
+					std::cout << " ";
+				
 				}
 			}
-			row++;
+			if(row == row_star) { row_star += 6; }
+			if(row == row_blank) { row_blank += 6; }
+			star_middle = 1;
+			blank_middle = 4;
 			std::cout << "\n";
-		}
-		
-		for (int t = 0; t < 3; t++) {
-			for(int col = 0; col < width; col++){
-				for(int i = 0; i < 3; i++) {
+		} //row over
+		else {
+			star_middle = 4;
+			blank_middle = 1;
+			
+			for (int col = 0; col < width; col++) { //second row type
+				if (col%2 == 0 && col%3 == 0 && col%6 == 0) {
 					std::cout << " ";
-					col++;
 				}
-
-				for (int j = 0; j < 3; j++) {
+				else if (col%3 == 0 && col != 0) {
 					std::cout << "*";
-					col++;
+				}
+				else if (col == blank_middle) {
+					std::cout << " ";
+					blank_middle += 6;
+				}
+				else if (col == star_middle) {
+					std::cout << "*";
+					star_middle += 6;
+				}
+				else if (col%2 == 0) {
+					std::cout << " ";
+				}
+				else {
+					std::cout << "*";
 				}
 			}
-		row++;
-		std::cout << "\n";
+			if(row ==row_star) { row_star += 6;}
+			if(row == row_blank) {row_blank +=6;}
+			std::cout << "\n";
 		}
 	}
 	return "";
