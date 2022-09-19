@@ -133,13 +133,40 @@ std::string checkerboard3x3(int width, int height)
 {
 	std::cout << "Shape: \n";
 	int num = 0;
-
+	
 	for (int row = 0; row < height; row++) {
-		for (int col = 0; col < width; col++) {
-				
+		for (int s = 0; s < 3; s++) {
+			for (int col = 0; col < width; col++) {
+				for(int i = 0; i < 3; i++) {
+					std::cout << "*";
+					col++;
+				}
+				//if break statement here?
+
+				for(int j = 0; j < 3; j++) {
+					std::cout << " ";
+					col++;
+				}
 			}
+			row++;
+			std::cout << "\n";
 		}
+		
+		for (int t = 0; t < 3; t++) {
+			for(int col = 0; col < width; col++){
+				for(int i = 0; i < 3; i++) {
+					std::cout << " ";
+					col++;
+				}
+
+				for (int j = 0; j < 3; j++) {
+					std::cout << "*";
+					col++;
+				}
+			}
+		row++;
 		std::cout << "\n";
+		}
 	}
 	return "";
 }
