@@ -40,4 +40,9 @@ int main()
 	result = checkerboard3x3(16,11);
 	std::cout << result;
 	std::cout << "\n------------------\n" << std::endl;
+
+	std::cout << "checkerboard3x3(27,27):\n";
+	result = checkerboard3x3(16,11);
+	std::cout << result;
+	std::cout << "\n------------------\n" << std::endl;
 }
