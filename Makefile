@@ -1,4 +1,14 @@
-main: main.o funcs.o
-		g++ -o main main.o funcs.o
+OBJECTS=main.o funcs.o
+CXX=g++
+LDFLAGS=-lm
+CXXFLAGS=-Wall -Wpedantic
 
-main.o: main.cpp funcs.cpp
+main: main.o funcs.o
+		g++ -o main $(CXXFLAGS) $(LDFLAGS) $(OBJECTS)
+
+main.o: main.cpp funcs.h
+
+funcs.o: funcs.cpp funcs.h
+
+clean:
+	rm -f $(OBJECTS)
