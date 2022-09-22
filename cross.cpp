@@ -20,3 +20,24 @@ std:: string cross(int size)
 		e -= 2;
 		std::cout << "*\n";	
 	}
+	
+	b--;
+	e += 2;
+
+	for (int row = 0; row < size/2; row++) { 
+		for (int i = b; i > 0; i--) {
+			std::cout << " ";
+		}
+		b--;
+		std::cout << "*";
+
+		for (int i = 0; i < e; i++) {
+			std::cout << " ";
+		}
+		e += 2;
+		std::cout << "*\n";
+	}
+
+	return "";
+}
+
