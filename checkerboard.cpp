@@ -1,5 +1,5 @@
 #include <iostream>
-#include "funcs.h"
+#include "checkerboard.h"
 
 std::string checkerboard(int width, int height)
 {
