@@ -16,6 +16,11 @@ int main()
 	std::cout << result;
 	std::cout << "\n------------------\n" << std::endl;
 
+	std::cout << "cross(8):\n";
+	result = cross(8);
+	std::cout << result;
+	std::cout << "\n------------------\n" << std::endl;
+	
 	std::cout << "cross(10):\n";
 	result = cross(10);
 	std::cout << result;
