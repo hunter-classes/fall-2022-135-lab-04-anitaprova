@@ -1,6 +1,12 @@
 #include <iostream>
 #include <string>
-#include "funcs.h"
+#include "box.h"
+#include "checkerboard.h"
+#include "cross.h"
+#include "lower.h"
+#include "upper.h"
+#include "trapezoid.h"
+#include "checkerboard3x3.h"
 
 int main()
 {
